@@ -26,7 +26,6 @@ public class RatingServiceImpl implements RatingService{
     public Ratings createRatingWithMovieIdAndUserId(int movieId, int userId, Ratings newRating) {
 
         Optional<Ratings> existingRating = ratingsRepository.findByUserIdAndMovieIdAndStatus(userId, movieId,true);
-
         if (existingRating.isPresent()) {
             Ratings existing = existingRating.get();
 
@@ -40,7 +39,6 @@ public class RatingServiceImpl implements RatingService{
         if (movieOptional.isPresent() && userOptional.isPresent()) {
             Movie movie = movieOptional.get();
             User user = userOptional.get();
-
             if (movie.isStatus()) {
                 newRating.setMovie(movie);
                 newRating.setUser(user);
@@ -91,7 +89,6 @@ public class RatingServiceImpl implements RatingService{
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Rating not found for the given movie and user ID");
         }
     }
-
 
     @Override
     public List<Ratings> getAllReviewForTheUserID(int userId) {

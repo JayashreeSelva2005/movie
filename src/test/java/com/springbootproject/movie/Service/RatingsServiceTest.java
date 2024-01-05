@@ -336,6 +336,4 @@ public class RatingsServiceTest {
         assertNotNull(result);
         assertTrue(result.isEmpty());
     }
-
-
 }

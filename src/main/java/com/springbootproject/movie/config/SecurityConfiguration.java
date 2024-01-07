@@ -27,7 +27,7 @@ public class SecurityConfiguration {
         this.authenticationProvider = authenticationProvider;
     }
 
-//    @Bean
+    //    @Bean
 //    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 //        http
 //                .csrf()

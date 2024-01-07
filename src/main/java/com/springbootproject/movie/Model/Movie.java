@@ -18,12 +18,14 @@ public class Movie {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @NotNull(message = "Name cannot be null")
     @NotBlank(message = "Name cannot be blank")
-    @Size(min = 1, max = 255, message = "Name must be between 1 and 255 characters")
+    @Size(min = 3, max = 255, message = "Name must be between 1 and 255 characters")
     private String name;
 
+    @NotNull(message = "Description cannot be null")
     @NotBlank(message = "Description cannot be blank")
-    @Size(min = 1, max = 1000, message = "Description must be between 1 and 1000 characters")
+    @Size(min = 3, max = 1000, message = "Description must be between 1 and 1000 characters")
     private String description;
 
     @NotNull(message = "Status cannot be null")
